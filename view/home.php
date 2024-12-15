@@ -38,10 +38,10 @@
   <div class="row flex-fill d-flex flex-column justify-content-center">
     <div class="col-auto mt-3">
       <h1 class="text-secondary display-4"><?php echo $welcome; ?></h1>
-      <div class="d-flex align-items-end">
-        <img src="<?php echo $this->asset('images/mgm.png'); ?>" style="width:300px;" alt="MGM: Media, Game, and Mobile Laboratory" />  
-        <span class="pb-4"><?php echo $this->view('nav.php'); ?></span>
+      <div class="d-flex align-items-end mt-4">
+        <img src="<?php echo $this->asset('images/mgm.png'); ?>" style="width:333px;" alt="MGM: Media, Game, and Mobile Laboratory" />  
       </div>
+      <div class="py-4"> <span class="py-4"><?php echo $this->view('nav.php'); ?></span></div>
     </div>
     <div class="col-auto my-5">
       <a href="<?php echo $this->location('../admin'); ?>" type="button" class="btn btn-lg btn-secondary">Enter &rsaquo;</a>

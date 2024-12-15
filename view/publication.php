@@ -3,7 +3,7 @@
   <div class="row flex-fill d-flex flex-column">
     <div class="col-auto mt-3 border-bottom pb-4">
     <div class="d-flex flex-row align-items-end">
-      <img src="<?php echo $this->asset('images/mgm.png'); ?>" style="width:180px;" alt="MGM: Media, Game, and Mobile Laboratory" />
+      <img src="<?php echo $this->asset('images/mgm.png'); ?>" style="width:180px;" class="me-4" alt="MGM: Media, Game, and Mobile Laboratory" />
       <?php $this->view('nav.php'); ?>
     </div>
     </div>
