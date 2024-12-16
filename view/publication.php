@@ -12,17 +12,17 @@
     <hr>
     <div class="col-md-12 col-lg-9">
     <?php usort($bib, function($a, $b) {
-              return $b['year'] <=> $a['year'];
+              return @$b['year'] <=> @$a['year'];
           });
     ?>
     <?php foreach($bib as $b) {
       if ($b['type'] != 'article') continue;
       // var_dump($b);
       echo '<p style="padding-left: 1.5em; text-indent:-1.5em;">';
-      echo '<span> '. $b['author'].' </span>';
-      echo '<span> '. ($b['year'] ?? '').'. </span>';
-      echo '<span> <em>'. $b['title'].'.</em> </span>';
-      echo '<span> '. $b['journal'].'. </span>';
+      echo '<span> '. @$b['author'].' </span>';
+      echo '<span> '. (@$b['year'] ?? '').'. </span>';
+      echo '<span> <em>'. @$b['title'].'.</em> </span>';
+      echo '<span> '. @$b['journal'].'. </span>';
       echo '<span> '. (isset($b['volume']) && !empty($b['volume']) ? 'Vol.' . $b['volume'] : '').(isset($b['number']) && !empty($b['number']) ? '('.$b['number'].')' : ''). '. </span>';
       echo '<span> '. (isset($b['publisher']) ? '' . $b['publisher'] . '.' : '') .' </span>';
       echo '<span> '. (isset($b['pages']) ? 'pp. ' . $b['pages'] . '.' : '') .' </span>';
@@ -40,9 +40,9 @@
     <?php foreach($bib as $b) {
       if ($b['type'] != 'inproceedings' || $b['type'] == 'incollection') continue;
       echo '<p style="padding-left: 1.5em; text-indent:-1.5em;">';
-      echo '<span> '. $b['author'].' </span>';
-      echo '<span> '. ($b['year'] ?? '').'. </span>';
-      echo '<span> <em>'. $b['title'].'.</em> </span>';
+      echo '<span> '. @$b['author'].' </span>';
+      echo '<span> '. (@$b['year'] ?? '').'. </span>';
+      echo '<span> <em>'. @$b['title'].'.</em> </span>';
       echo '<span> '. (isset($b['booktitle']) ? $b['booktitle'] . '.' : '').' </span>';
       echo '<span> '. (isset($b['volume']) && !empty($b['volume']) ? 'Vol.' . $b['volume'] : '').(isset($b['number']) && !empty($b['number']) ? '('.$b['number'].')' : ''). '. </span>';
       echo '<span> '. (isset($b['publisher']) ? '' . $b['publisher'] . '.' : '') .' </span>';

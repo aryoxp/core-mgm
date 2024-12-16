@@ -8,14 +8,19 @@ class HomeController extends CoreController {
   }
   public function publication() {
     include('mgm/lib/bibtex/lib_bibtex.inc.php');
-    $Site = array();
-    $Site['bibtex'] = new Bibtex('mgm/file/references.bib');
-    $bib = $Site['bibtex'];
-    $bib->Select(array('author' => '/.*/i'));
-    $bib->PrintBibliography();
+    $bibs = [];
+    $dir    = 'mgm/file';
+    $files = scandir($dir);
+    foreach($files as $f) {
+      if ($f == '.' || $f == '..') continue;
+      $b = new Bibtex($dir . '/' . $f);
+      $b->Select(array('author' => '/.*/i'));
+      $b->PrintBibliography();
+      $bibs += $b->bibarr;
+    }
     $this->ui->useCoreLib('core-ui');
     $this->ui->useStyle('css/style.css');
-    $this->ui->view('publication.php', array('bib' => $bib->bibarr));
+    $this->ui->view('publication.php', array('bib' => $bibs));
   }
   public function members() {
     $this->ui->useCoreLib('core-ui');
