@@ -44,7 +44,10 @@
       <div class="py-4"> <span class="py-4"><?php echo $this->view('nav.php'); ?></span></div>
     </div>
     <div class="col-auto my-5">
-      <a href="<?php echo $this->location('../admin'); ?>" type="button" class="btn btn-lg btn-secondary">Enter &rsaquo;</a>
+      <a href="<?php echo $this->location('../admin'); ?>" type="button" class="btn btn-lg btn-secondary px-5">Enter &rsaquo;</a>
+      <a href="https://rbc-filkom.ub.ac.id" class="ms-5">
+        <img src="<?php echo $this->asset('images/overleaf-logo-primary.png'); ?>" style="max-width:200px;">
+      </a>
     </div>
   </div>
   <?php echo $this->view('footer.php'); ?>

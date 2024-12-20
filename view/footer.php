@@ -7,6 +7,7 @@
         <a class="text-decoration-none" href="<?php echo $this->location('home/research'); ?>">Research</a> &bull;
         <a class="text-decoration-none" href="<?php echo $this->location('home/rights'); ?>">Rights</a> &bull;
         <a class="text-decoration-none" href="<?php echo $this->location('home/members'); ?>">Members</a> &bull; 
+        <a class="text-decoration-none" href="https://rbc-filkom.ub.ac.id">Overleaf</a> &bull; 
         <a class="text-decoration-none" href="<?php echo $this->location('../admin'); ?>">Admin</a>
       </span>
       &copy; <?php echo date('Y'); ?> Media, Game, and Mobile Laboratory.<br>All rights reserved.
