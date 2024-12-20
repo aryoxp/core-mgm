@@ -1,4 +1,5 @@
 <?php
+use Michelf\MarkdownExtra;
 
 class HomeController extends CoreController {
   public function index() {
@@ -23,13 +24,45 @@ class HomeController extends CoreController {
     $this->ui->view('publication.php', array('bib' => $bibs));
   }
   public function members() {
+    $service = new ContentService();
+    $content = $service->getContent('lab-members');
+    // var_dump($content);
+    if ($content && $content->type == 'md') {
+      require_once 'mgm/lib/Michelf/MarkdownExtra.inc.php';
+      $parser = new MarkdownExtra;
+      $parser->empty_element_suffix = ">";
+      $content->content = $parser->transform($content->content);
+    }
+
     $this->ui->useCoreLib('core-ui');
     $this->ui->useStyle('css/style.css');
-    $this->ui->view('members.php');
+    $this->ui->view('members.php', ['content' => $content]);
+  }
+  public function rights() {
+    $service = new ContentService();
+    $content = $service->getContent('haki');
+    if ($content && $content->type == 'md') {
+      require_once 'mgm/lib/Michelf/MarkdownExtra.inc.php';
+      $parser = new MarkdownExtra;
+      $parser->empty_element_suffix = ">";
+      $content->content = $parser->transform($content->content);
+    }
+
+    $this->ui->useCoreLib('core-ui');
+    $this->ui->useStyle('css/style.css');
+    $this->ui->view('rights.php', ['content' => $content]);
   }
   public function research() {
+    $service = new ContentService();
+    $content = $service->getContent('research');
+    if ($content && $content->type == 'md') {
+      require_once 'mgm/lib/Michelf/MarkdownExtra.inc.php';
+      $parser = new MarkdownExtra;
+      $parser->empty_element_suffix = ">";
+      $content->content = $parser->transform($content->content);
+    }
     $this->ui->useCoreLib('core-ui');
     $this->ui->useStyle('css/style.css');
-    $this->ui->view('research.php');
+    $this->ui->view('research.php', ['content' => $content]);
   }
 }

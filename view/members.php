@@ -7,7 +7,10 @@
       <?php $this->view('nav.php'); ?>
     </div>
     </div>
-    <div class="display-5 pb-3 mt-3 text-primary">Lab Members</div>
+
+    <div><?php echo $content->content; ?></div>
+
+    <!-- <div class="display-5 pb-3 mt-3 text-primary">Lab Members</div>
     <h3 class="h4">Aryo Pinandito, ST, M.MT, Ph.D.<br><small class="text-secondary">Head of Laboratory</small></h3>
     <p>
       He have strong knowledge and expertise in web and mobile application development especially in Unix/Linux platform using Apache-PHP-MySQL and Google Android platform. He also fluent in most industrial standard programming language such as Java, Javascript, C, and C#. He have been experiencing in several mobile and web application development. Hence, strong interest in mobile and web application development and/or its implementation among other fields.
@@ -55,7 +58,7 @@
 
     <div class="fs-4">Master's Students</div>
     <div class="fs-4">Undergraduate Students</div>
-    <div class="fs-4">Fellow Members</div>
+    <div class="fs-4">Fellow Members</div> -->
 
   </div>
   <?php echo $this->view('footer.php'); ?>

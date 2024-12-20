@@ -4,8 +4,9 @@
       <span class="d-block text-secondary" style="font-size: 1rem">
         <a class="text-decoration-none" href="<?php echo $this->location(); ?>">Home</a> &bull; 
         <a class="text-decoration-none" href="<?php echo $this->location('home/publication'); ?>">Publication</a> &bull; 
-        <a class="text-decoration-none" href="<?php echo $this->location('home/members'); ?>">Members</a> &bull; 
         <a class="text-decoration-none" href="<?php echo $this->location('home/research'); ?>">Research</a> &bull;
+        <a class="text-decoration-none" href="<?php echo $this->location('home/rights'); ?>">Rights</a> &bull;
+        <a class="text-decoration-none" href="<?php echo $this->location('home/members'); ?>">Members</a> &bull; 
         <a class="text-decoration-none" href="<?php echo $this->location('../admin'); ?>">Admin</a>
       </span>
       &copy; <?php echo date('Y'); ?> Media, Game, and Mobile Laboratory.<br>All rights reserved.

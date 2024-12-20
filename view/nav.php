@@ -1,6 +1,8 @@
 <span class="display-6 d-block text-secondary" style="font-size: 1.5rem">
   <a class="text-decoration-none" href="<?php echo $this->location(); ?>">Home</a> &rsaquo; 
   <a class="text-decoration-none" href="<?php echo $this->location('home/publication'); ?>">Publication</a> &rsaquo; 
-  <a class="text-decoration-none" href="<?php echo $this->location('home/members'); ?>">Members</a> &rsaquo; 
-  <a class="text-decoration-none" href="<?php echo $this->location('home/research'); ?>">Research</a>
+   
+  <a class="text-decoration-none" href="<?php echo $this->location('home/research'); ?>">Research</a> &rsaquo; 
+  <a class="text-decoration-none" href="<?php echo $this->location('home/rights'); ?>">Rights</a> &rsaquo;
+  <a class="text-decoration-none" href="<?php echo $this->location('home/members'); ?>">Members</a>
 </span>
